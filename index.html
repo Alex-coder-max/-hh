@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>天虹商场质量检测热力图</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page__header">
+        <div>
+          <p class="eyebrow">天虹商场 · 质量与检测</p>
+          <h1>楼层分区热力图总览</h1>
+          <p class="subtitle">
+            结合问题严重度与区域权重，快速识别高风险区域与重点关注空间。
+          </p>
+        </div>
+        <div class="legend">
+          <span class="legend__label">低风险</span>
+          <div class="legend__bar"></div>
+          <span class="legend__label">高风险</span>
+        </div>
+      </header>
+
+      <section class="panel">
+        <div class="tabs" role="tablist" aria-label="楼层选择">
+          <button class="tab is-active" data-floor="F1" role="tab" aria-selected="true">
+            F1 入口与主通道
+          </button>
+          <button class="tab" data-floor="F2" role="tab" aria-selected="false">
+            F2 餐饮与休闲区
+          </button>
+          <button class="tab" data-floor="F3" role="tab" aria-selected="false">
+            F3 生活方式区
+          </button>
+        </div>
+
+        <div class="content">
+          <div class="map">
+            <div class="map__header">
+              <div>
+                <h2 id="floor-title">F1 入口与主通道</h2>
+                <p id="floor-summary">当前展示 6 个重点区域，按权重加权后的综合风险值排序。</p>
+              </div>
+              <div class="meta">
+                <div>
+                  <span class="meta__label">平均风险值</span>
+                  <strong id="avg-score">—</strong>
+                </div>
+                <div>
+                  <span class="meta__label">高风险区域</span>
+                  <strong id="high-count">—</strong>
+                </div>
+              </div>
+            </div>
+            <div class="map__grid" id="heatmap-grid"></div>
+          </div>
+          <aside class="insights">
+            <h3>风险洞察</h3>
+            <ul id="insights-list"></ul>
+            <div class="weights">
+              <h4>权重说明</h4>
+              <p>重点区域的风险值按权重加权计算（例如消防通道、主入口、客流高峰区）。</p>
+              <div class="weights__items" id="weights-list"></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
